@@ -1,0 +1,31 @@
+<resources>
+    <dimen name="horizontal_margin">16dp</dimen>
+    <dimen name="vertical_margin">16dp</dimen>
+
+    <!--General-->
+    <dimen name="dimen_fourty">40dp</dimen>
+    <dimen name="dimen_fifty">50dp</dimen>
+    <dimen name="dimen_ten">10dp</dimen>
+    <dimen name="dimen_thirty">30dp</dimen>
+    <dimen name="diemn_twenty">20dp</dimen>
+
+    <!-- font sizes -->
+    <dimen name="font_greater_huge">48sp</dimen>
+    <dimen name="font_greater">32sp</dimen>
+    <dimen name="font_huge">24sp</dimen>
+    <dimen name="font_larger">22sp</dimen>
+    <dimen name="font_medium_large">20sp</dimen>
+    <dimen name="font_large">18sp</dimen>
+    <dimen name="font_medium">16sp</dimen>
+    <dimen name="font_normal">14sp</dimen>
+    <dimen name="font_small">12sp</dimen>
+    <dimen name="font_tiny">10sp</dimen>
+    <dimen name="font_small_tiny">8sp</dimen>
+
+    <!-- typical sizes of views -->
+    <dimen name="button_height_tall">60dp</dimen>
+    <dimen name="button_height_normal">40dp</dimen>
+    <dimen name="button_height_short">32dp</dimen>
+    <dimen name="button_radius">2dp</dimen>
+    <dimen name="button_stoke">1dp</dimen>
+</resources>

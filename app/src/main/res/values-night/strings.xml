@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="no_network_connectivity">No Network Connectivity</string>
+    <string name="demo_application_for_mphasis">Demo Application for MPhasis</string>
+    <string name="view_weather">View Weather</string>
+    <string name="description_weather_condition_icon">weather condition icon</string>
+    <string name="degree_celsius_symbol">°C</string>
+    <string name="label_humidity">Humidity</string>
+    <string name="label_pressure">Pressure</string>
+    <string name="label_visibility">Visibility</string>
+    <string name="label_sunrise">Sunrise</string>
+    <string name="label_sunset">Sunset</string>
+    <string name="input_usa_city_only">Input USA City</string>
+    <string name="location_permission_needed">Location Permission Needed</string>
+    <string name="location_permission_accept">This app needs the Location permission, please accept to use location functionality.</string>
+    <string name="permission_disabled">Permission Disabled.</string>
+    <string name="ok">Ok</string>
+</resources>

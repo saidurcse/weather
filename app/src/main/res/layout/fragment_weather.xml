@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable name="viewModel" type="com.example.saidur.ui.home.WeatherViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.login.LoginFragment">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/start_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/horizontal_margin" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/end_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/horizontal_margin" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:title="@string/app_name"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/layout_input"
+                layout="@layout/layout_input_part"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/start_guideline"
+                app:layout_constraintEnd_toEndOf="@+id/end_guideline"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+            <include
+                android:id="@+id/layout_weather_basic"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                layout="@layout/layout_weather_basic_info"
+                app:layout_constraintStart_toStartOf="@+id/start_guideline"
+                app:layout_constraintEnd_toEndOf="@+id/end_guideline"
+                app:layout_constraintTop_toBottomOf="@id/layout_input"
+                android:visibility="gone"/>
+
+            <include
+                android:id="@+id/layout_weather_additional"
+                layout="@layout/layout_weather_additional_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@+id/start_guideline"
+                app:layout_constraintEnd_toEndOf="@+id/end_guideline"
+                app:layout_constraintTop_toBottomOf="@id/layout_weather_basic"
+                android:visibility="gone"/>
+
+            <include
+                android:id="@+id/layout_sunset_sunrise"
+                layout="@layout/layout_sunrise_sunset"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/start_guideline"
+                app:layout_constraintEnd_toEndOf="@+id/end_guideline"
+                android:layout_marginBottom="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:visibility="gone"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/creditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="5dp"
+                android:text="@string/demo_application_for_mphasis"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="@+id/start_guideline"
+                app:layout_constraintEnd_toEndOf="@+id/end_guideline"
+                app:layout_constraintTop_toBottomOf="@+id/layout_sunset_sunrise"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:visibility="visible"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_error_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Invalid App ID"
+                tools:visibility="visible" />
+
+            <!--<androidx.constraintlayout.widget.Group
+                android:id="@+id/output_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:constraint_referenced_ids="layout_weather_basic,layout_weather_additional,layout_sunset_sunrise" />-->
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="@{viewModel.dataLoading ? View.VISIBLE : View.GONE}"
+                style="?android:attr/progressBarStyleLarge"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
